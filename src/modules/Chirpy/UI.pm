@@ -1,4 +1,4 @@
-###############################################################################
+##############################################################################
 # Chirpy!, a quote management system                                          #
 # Copyright (C) 2005-2007 Tim De Pauw <ceetee@users.sourceforge.net>          #
 ###############################################################################
@@ -110,46 +110,56 @@ use constant ADMIN_PERMISSIONS => {
 	MANAGE_UNAPPROVED_QUOTES() => {
 		Chirpy::Account::USER_LEVEL_3 => 1,
 		Chirpy::Account::USER_LEVEL_6 => 1,
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	MANAGE_FLAGGED_QUOTES() => {
 		Chirpy::Account::USER_LEVEL_6 => 1,
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	EDIT_QUOTE() => {
 		Chirpy::Account::USER_LEVEL_6 => 1,
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	REMOVE_QUOTE() => {
 		Chirpy::Account::USER_LEVEL_6 => 1,
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	ADD_NEWS() => {
 		Chirpy::Account::USER_LEVEL_6 => 1,
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	EDIT_NEWS() => {
 		Chirpy::Account::USER_LEVEL_6 => 1,
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	REMOVE_NEWS() => {
 		Chirpy::Account::USER_LEVEL_6 => 1,
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	VIEW_EVENT_LOG() => {
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	ADD_ACCOUNT() => {
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	EDIT_ACCOUNT() => {
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	REMOVE_ACCOUNT() => {
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_9 => 1,
+                Chirpy::Account::USER_LEVEL_12 => 1
 	},
 	CHECK_FOR_UPDATE() => {
-		Chirpy::Account::USER_LEVEL_9 => 1
+		Chirpy::Account::USER_LEVEL_12 => 1
 	}
 };
 
@@ -741,7 +751,7 @@ sub _provide_administration_interface {
 				my $id = $self->get_account_to_remove();
 				if (defined $id) {
 					my $account = $self->parent()->get_account_by_id($id);
-					my $level = Chirpy::Account::USER_LEVEL_9;
+					my $level = Chirpy::Account::USER_LEVEL_12;
 					if ($account->get_level() == $level
 						&& $parent->account_count_by_level($level) <= 1) {
 							$self->report_last_owner_account_removal_error();

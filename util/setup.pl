@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 ###############################################################################
-# Chirpy!, a quote management system                                          #
+# Chirpy! 0.3, a quote management system                                      #
 # Copyright (C) 2005-2007 Tim De Pauw <ceetee@users.sourceforge.net>          #
 ###############################################################################
 # This program is free software; you can redistribute it and/or modify it     #
@@ -35,10 +35,10 @@ BEGIN {
 	unshift @INC, 'src/modules';
 }
 
-use Chirpy;
-use Chirpy::Util;
-use Chirpy::Account;
-use Chirpy::NewsItem;
+use Chirpy 0.3;
+use Chirpy::Util 0.3;
+use Chirpy::Account 0.3;
+use Chirpy::NewsItem 0.3;
 
 use constant DEFAULT_USERNAME => 'superuser';
 use constant DEFAULT_PASSWORD => 'password';
@@ -67,7 +67,7 @@ if ($cgi->request_method() eq 'POST') {
 			undef,
 			DEFAULT_USERNAME,
 			Chirpy::Util::encrypt(DEFAULT_PASSWORD),
-			Chirpy::Account::USER_LEVEL_9
+			Chirpy::Account::USER_LEVEL_12
 		);
 		my $news = new Chirpy::NewsItem(
 			undef,

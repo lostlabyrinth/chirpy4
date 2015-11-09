@@ -109,6 +109,7 @@ use warnings;
 use constant USER_LEVEL_3 => 3;
 use constant USER_LEVEL_6 => 6;
 use constant USER_LEVEL_9 => 9;
+use constant USER_LEVEL_12 => 12;
 
 use vars qw($VERSION);
 
