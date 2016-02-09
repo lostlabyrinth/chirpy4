@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/chirpy/code/!svn/ver/300/trunk/chirpy/src/templates/default/feeds
+END
+atom10.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/chirpy/code/!svn/ver/300/trunk/chirpy/src/templates/default/feeds/atom10.xml
+END
+rss20.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/chirpy/code/!svn/ver/300/trunk/chirpy/src/templates/default/feeds/rss20.xml
+END
