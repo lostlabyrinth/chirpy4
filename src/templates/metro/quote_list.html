@@ -8,7 +8,6 @@
 		locale["limit_exceeded_text"] = "<TMPL_VAR NAME="LIMIT_EXCEEDED_TEXT">";
 		locale["quote_not_found_text"] = "<TMPL_VAR NAME="QUOTE_NOT_FOUND_TEXT">";
 		locale["session_required_text"] = "<TMPL_VAR NAME="SESSION_REQUIRED_TEXT">";
-		locale["flagged"] = "<TMPL_VAR NAME="FLAGGED">";
 	</script>
 	<script type="text/javascript" src="<TMPL_VAR NAME="RESOURCES_URL">/js/ajax.js"></script>
 	<script type="text/javascript" src="<TMPL_VAR NAME="RESOURCES_URL">/js/live_rating.js"></script>
@@ -34,7 +33,7 @@
 	</TMPL_IF>
 	<ul class="quote-list">
 	<TMPL_LOOP NAME="QUOTES">
-		<li id="quote-<TMPL_VAR NAME="ID">" class="quote <TMPL_UNLESS NAME="IS_APPROVED">unapproved</TMPL_UNLESS> <TMPL_IF NAME="IS_FLAGGED">flagged</TMPL_IF>">
+		<li id="quote-<TMPL_VAR NAME="ID">" class="quote <TMPL_UNLESS NAME="IS_APPROVED">unapproved</TMPL_UNLESS>">
 			<div class="quote-container">
 				<h3 class="quote-header" id="quote-header-<TMPL_VAR NAME="ID">">
 				<TMPL_IF NAME="IS_APPROVED">
@@ -49,21 +48,10 @@
 					<a href="<TMPL_VAR NAME="RATING_DOWN_URL">" rel="nofollow"
 					onclick="return sendRating(this, <TMPL_VAR NAME="ID">)"
 					title="<TMPL_VAR NAME="RATING_DOWN_DESCRIPTION">" class="quote-rating-down<TMPL_IF NAME="WAS_VOTED_DOWN"> casted-vote</TMPL_IF>" id="quote-rating-down-<TMPL_VAR NAME="ID">"><TMPL_VAR NAME="DOWN">&darr;</a>
-					<TMPL_IF NAME="IS_FLAGGED">
-					<span class="quote-flagged">[<TMPL_VAR NAME="FLAGGED">]</span>
-					<TMPL_ELSE>
-					<a href="<TMPL_VAR NAME="REPORT_URL">" rel="nofollow"
-					onclick="return sendReport(this, <TMPL_VAR NAME="ID">)"
-					title="<TMPL_VAR NAME="REPORT_DESCRIPTION">" class="quote-report" id="quote-report-<TMPL_VAR NAME="ID">">[<TMPL_VAR NAME="REPORT">]</a>
-					</TMPL_IF>
 					<span class="quote-date" title="<TMPL_VAR NAME="DATE_DESCRIPTION">"><TMPL_VAR NAME="SUBMITTED_TEXT"></span>
 					<TMPL_IF NAME="ALLOW_EDIT">
 					<a href="<TMPL_VAR NAME="EDIT_URL">" class="quote-edit"
 					title="<TMPL_VAR NAME="EDIT_DESCRIPTION">">[<TMPL_VAR NAME="EDIT">]</a>
-					</TMPL_IF>
-					<TMPL_IF NAME="ALLOW_UNFLAG">
-					<a href="<TMPL_VAR NAME="UNFLAG_URL">" class="quote-unflag"
-					title="<TMPL_VAR NAME="UNFLAG_DESCRIPTION">">[<TMPL_VAR NAME="UNFLAG">]</a>
 					</TMPL_IF>
 					<TMPL_IF NAME="ALLOW_REMOVE">
 					<a href="<TMPL_VAR NAME="REMOVE_URL">" class="quote-remove"
